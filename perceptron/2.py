@@ -10,7 +10,7 @@ data = np.array(data)
 X_train = np.array([data[:, 0], data[:, 1]])
 Y_train = np.array(data[:, 2])
 
-# print()
+
 X_train = X_train.reshape(1000, 2)
 Y_train = Y_train.reshape(1000, 1)
 
@@ -24,7 +24,7 @@ fig = plt.figure()
 ax = fig.add_subplot()
 
 for j in range(N):
-    # train
+
     y_pred = np.matmul(X_train[j], w)
     e = Y_train[j] - y_pred
     w = w + e * lr * X_train[j]
@@ -33,7 +33,6 @@ for j in range(N):
     loss.append(error)
     print('error: ', error)
 
-    # plot
     ax.clear()
     ax.plot(loss)
     plt.pause(0.01)
